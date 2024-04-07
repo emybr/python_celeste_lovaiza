@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockControl</title>
+    <title>Stock Control - Home</title>
 </head>
 <body>
-<h1>Bienvenido a StockControl</h1>
+    <h1>Bienvenido a StockControl</h1>
+    
+    <a href="{% url 'agregar_producto' %}">Agregar Producto</a><br>
+    <a href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a><br>
+    <a href="{% url 'listar_productos' %}">Listar todos los Productos</a><br>
+    <a href="{% url 'listar_proveedores' %}">Listar todos los Proveedores</a><br>
 </body>
 </html>

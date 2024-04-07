@@ -1,56 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Productos</title>
+    <title>StockControl - Agregar Producto</title>
 </head>
 <body>
-    <h1>Agregar Nuevo Producto</h1>
-<div class="mb-3">
-    <label for="" class="form-label">Nombre</label>
-    <input
-        type="text"
-        name=""
-        id=""
-        class="form-control"
-        placeholder=""
-        aria-describedby="helpId"
-    />
-</div>
-
-<div class="mb-3">
-    <label for="" class="form-label">Precio</label>
-    <input
-        type="text"
-        name=""
-        id=""
-        class="form-control"
-        placeholder=""
-        aria-describedby="helpId"
-    />
-    <div class="mb-3">
-        <label for="" class="form-label">Stock Actual</label>
-        <input
-            type="text"
-            name=""
-            id=""
-            class="form-control"
-            placeholder=""
-            aria-describedby="helpId"
-        />
-    </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Proveedor
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Proveedor 1</a></li>
-            <li><a class="dropdown-item" href="#">Proveedor 2</a></li>
-            <li><a class="dropdown-item" href="#">Proveedor 3</a></li>
-        </ul>
-        </button>
-        
-      </div>    
-</div>
+    <h1>Agregar Producto</h1>
+    
+    <form method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="precio">Precio:</label><br>
+        <input type="number" id="precio" name="precio" step="0.01"><br>
+        <label for="stock">Stock:</label><br>
+        <input type="number" id="stock" name="stock"><br>
+        <label for="proveedor">Proveedor:</label><br>
+        <select id="proveedor" name="proveedor">
+            {% for proveedor in proveedores %}
+                <option value="{{ proveedor.nombre }}">{% proveedor.nombre %}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Agregar">
+    </form>
 </body>
 </html>
