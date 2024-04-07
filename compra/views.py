@@ -29,7 +29,6 @@ def agregar_producto(request):
         form = ProductoForm()
     return render(request, 'agregar_producto.html', {'form': form})
 
-
 #Listar todos los productos
 def listar_productos(request):
     productos = Producto.objects.all()

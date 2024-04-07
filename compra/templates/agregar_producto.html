@@ -15,9 +15,10 @@
         <label for="stock">Stock:</label><br>
         <input type="number" id="stock" name="stock"><br>
         <label for="proveedor">Proveedor:</label><br>
+        {% csrf_token %}
         <select id="proveedor" name="proveedor">
             {% for proveedor in proveedores %}
-                <option value="{{ proveedor.nombre }}">{% proveedor.nombre %}</option>
+                <option value= 'proveedor.nombre' ></option>
             {% endfor %}
         </select><br>
         <input type="submit" value="Agregar">
