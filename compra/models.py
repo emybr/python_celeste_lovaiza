@@ -14,3 +14,5 @@ class Producto(models.Model):
     precio = models.IntegerField()
     stock = models.IntegerField()
     proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nombre
