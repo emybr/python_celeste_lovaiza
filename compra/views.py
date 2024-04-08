@@ -5,24 +5,20 @@ from .forms import ProveedorForm, ProductoForm
 
 #Crear proveedor
 def agregar_proveedor(request):
+    form = ProveedorForm()
     if request.method == 'POST':
         form = ProveedorForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
-    else:
-        form = ProveedorForm()
     return render(request, 'agregar_proveedor.html', {'form': form})
 
 #Crear producto
 def agregar_producto(request):
+    form = ProductoForm()
     if request.method == 'POST':
         form = ProductoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
-    else:
-        form = ProductoForm()
     return render(request, 'agregar_producto.html', {'form': form})
 
 #Listar todos los proveedores
