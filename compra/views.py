@@ -3,10 +3,6 @@ from django.http import HttpResponse
 from .models import Proveedor, Producto
 from .forms import ProveedorForm, ProductoForm
 
-#Página de inicio: Home
-def home(request):
-    return render(request, 'home.html')
-
 #Crear proveedor
 def agregar_proveedor(request):
     if request.method == 'POST':
@@ -29,12 +25,12 @@ def agregar_producto(request):
         form = ProductoForm()
     return render(request, 'agregar_producto.html', {'form': form})
 
-#Listar todos los productos
-def listar_productos(request):
-    productos = Producto.objects.all()
-    return render(request, 'listar_productos.html', {'productos': productos})
-
 #Listar todos los proveedores
 def listar_proveedores(request):
     proveedores = Proveedor.objects.all()
     return render(request, 'listar_proveedores.html', {'proveedores': proveedores})
+
+#Listar todos los productos
+def listar_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'listar_productos.html', {'productos': productos})
