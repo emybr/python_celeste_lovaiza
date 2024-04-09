@@ -17,12 +17,14 @@
             </tr>
         </thead>
         <tbody>
+            {% for producto in productos %}
             <tr>
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.precio }}</td>
                 <td>{{ producto.stock }}</td>
-                <td>{{ producto.proveedor }}</td>
+                <td>{{ producto.nombre }}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>

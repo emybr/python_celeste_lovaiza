@@ -16,11 +16,13 @@
             </tr>
         </thead>
         <tbody>
+            {% for proveedor in proveedores %}
             <tr>
                 <td>{{ proveedor.nombre }}</td>
                 <td>{{ proveedor.apellido }}</td>
                 <td>{{ proveedor.dni }}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>
